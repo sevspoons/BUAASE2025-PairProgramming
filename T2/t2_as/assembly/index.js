@@ -5,15 +5,15 @@
 // 水果位置 fruit: [x, y]
 // 输出是一个方向，0: 上, 1: 左, 2: 下, 3: 右
 export function greedySnakeMoveBarriers(
-  snake: i32[], // 8
-  fruit: i32[], // 2
-  barriers: i32[] // 24
-): i32 {
+  snake, // 8
+  fruit, // 2
+  barriers // 24
+) {
   // -----------------------------------初始化-----------------------------------
   // 8*8的棋盘, 0表示空白, 1表示蛇, 2表示水果, 3表示障碍 , 右为x+, 上为y+
-  let board = new Array<i32[]>(9);
+  let board = new Array(9);
   for (let i = 1; i <= 8; i++) {
-    board[i] = new Array<i32>(9).fill(0);
+    board[i] = new Array(9).fill(0);
   }
   // 方向数组
   let dx = [0, 1, 0, -1];
@@ -33,9 +33,9 @@ export function greedySnakeMoveBarriers(
   // -----------------------------------判断蛇能否循环-------------------------
   let looping = -1;
 
-  var sim = new Array<i32[]>(9); // 模拟棋盘
+  var sim = new Array(9); // 模拟棋盘
   for (let i = 1; i <= 8; i++) {
-    sim[i] = new Array<i32>(9).fill(0);
+    sim[i] = new Array(9).fill(0);
   }
   //添加障碍
   for (let i = 0; i < barriers.length; i += 2) {
@@ -86,12 +86,12 @@ export function greedySnakeMoveBarriers(
   // -----------------------------------bfs-----------------------------------
   // 从水果开始广度有限遍历,尝试找到蛇头
   let head = [fruit[0], fruit[1]];
-  let queue = new Array<i32[]>(1);
+  let queue = new Array(1);
   queue[0] = head; // 初始化队列
 
-  let visited = new Array<i32[]>(9); // 访问标记
+  let visited = new Array(9); // 访问标记
   for (let i = 1; i <= 8; i++) {
-    visited[i] = new Array<i32>(9).fill(0);
+    visited[i] = new Array(9).fill(0);
   }
   visited[head[0]][head[1]] = 1; // head置为已访问
 
