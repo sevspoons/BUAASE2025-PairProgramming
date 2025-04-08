@@ -91,7 +91,7 @@ export function greedy_snake_step(
   // 每个果子为中心,中心为1分,均匀向外扩散,每个格子的分数为1/step
   // 每个危险格子为中心,中心为-1分,均匀向外扩散,每个格子的分数为-1/step
   // 选择分数最高的方向
-  const fruit_benefit = 1 + round * 0.02;
+  const fruit_benefit = 1.5 + round * 0.02;
   const danger_punish = -1;
 
   let max_score: f64 = -Infinity;
@@ -145,7 +145,7 @@ export function greedy_snake_step(
 
     if (x === 1 || x === n || y === 1 || y === n) {
       // 靠近边界
-      score -= 0.5;
+      score -= 1;
     }
 
     // 更新最高评分

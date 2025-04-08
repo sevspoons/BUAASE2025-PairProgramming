@@ -1,4 +1,9 @@
-import assert from "assert";
-import { add } from "../build/debug.js";
-assert.strictEqual(add(1, 2), 3);
-console.log("ok");
+import { test } from "../../test.js";
+
+let sum = 0;
+for (let i = 0; i < 100; i++) {
+  const res = test();
+  sum += res.scores[0];
+}
+
+console.log(sum);

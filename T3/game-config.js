@@ -9,14 +9,14 @@ import { greedy_snake_step as snake4 } from "./t3_as/build/release.js";
 // import { greedy_snake_step as snake8 } from './t3-snake-{num}-{PL}/pkg/snake.js';
 
 // Game mode
-export const GAME_MODE = "1v1"; // "1v1" or "4snakes" or "custom"
+export const GAME_MODE = "4snakes"; // "1v1" or "4snakes" or "custom"
 
 // Snake decision functions mapping
 export const snakeModules = [
   snake1,
   snake2,
-  // snake3,
-  // snake4,
+  snake3,
+  snake4,
   // snake5,
   // snake6,
   // snake7,
